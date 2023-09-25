@@ -9,10 +9,10 @@ import py_midicsv
 from moviepy.editor import concatenate_videoclips, VideoFileClip, AudioFileClip, CompositeAudioClip
 
 # %%
-input_audio_path = easygui.fileopenbox('./', filetypes=['*.mp3'], multiple=False, title='Select Audio File')
+input_audio_path = easygui.fileopenbox('../', filetypes=['*.mp3'], multiple=False, title='Select Audio File')
 input_audio = AudioFileClip(input_audio_path)
 
-midi_file_path = easygui.fileopenbox('./', filetypes=['*.mid'], multiple=False, title='Select Midi File')
+midi_file_path = easygui.fileopenbox('../', filetypes=['*.mid'], multiple=False, title='Select Midi File')
 csv_string = py_midicsv.midi_to_csv(midi_file_path)
 
 with open('auto_saved.csv', 'w', encoding='UTF8') as f:
@@ -51,8 +51,10 @@ with open('auto_saved.csv', 'r', encoding='UTF8') as f:
                 sub_startime,
                 sub_startime + duration
                 )
-            # Append the subclip to the list of video clips
+
+            clip.close()
             subclips.append(sub)
+            # sub.close()
 
             concat_vid_duration = note_off_time
             print (f'concat_duration:{concat_vid_duration}\t clips_length:{len(subclips)}\t')
