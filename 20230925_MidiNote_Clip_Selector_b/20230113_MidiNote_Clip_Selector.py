@@ -5,15 +5,13 @@ import random
 from csv import reader
 
 # import mido
-# import py_midicsv
-from moviepy.editor import concatenate_videoclips, VideoFileClip, AudioFileClip, CompositeAudioClip, ImageClip
+import py_midicsv
+from moviepy.editor import concatenate_videoclips, VideoFileClip, AudioFileClip, CompositeAudioClip
 
 # %%
-# mid = mido.MidiFile('20221213_Droner_Rander_[Clip_Selector]_test_03.mid', )
-input_audio = AudioFileClip('/media/user7/Double_Dragon/Videography/My_Python_Video_Projects/RGB/20230925_MidiNote_Clip_Selector_b copy/Bus_Stop_0013.mp3')
+input_audio = AudioFileClip('20230925_MidiNote_Clip_Selector_b/input_audio.mp3')
 
-
-# csv_string = py_midicsv.midi_to_csv("20221213_Droner_Rander_[Clip_Selector]_test_03.mid",)
+csv_string = py_midicsv.midi_to_csv('./20230925_MidiNote_Clip_Selector_b/input_midi.mid', encoding='utf-8')
 # with open("Droner_Rander_[Clip_Selector]_test_03.csv", "w") as f:
 #     f.writelines(csv_string)
 
