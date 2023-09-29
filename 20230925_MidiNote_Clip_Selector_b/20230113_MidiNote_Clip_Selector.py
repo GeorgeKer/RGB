@@ -24,8 +24,7 @@ with open('auto_saved.csv', 'w', encoding='UTF8') as f:
 def select_clip_with_notes(note: int, dir: str) -> str:
     assert 36 <= note <= 63, f'Note: {note} is out of range'
     video_number = note - 35  # Calculate video number
-    print(f'note: {note}')
-    print(f'video_number: {video_number}')
+    print(f'note: {note}\tvideo_number: {video_number}')
     return f'{dir}{video_number:03d}.MP4'
 
     
@@ -52,16 +51,16 @@ with open('auto_saved.csv', 'r', encoding='UTF8') as f:
                 sub_startime + duration
                 )
 
-            clip.close()
             subclips.append(sub)
-            # sub.close()
 
             concat_vid_duration = note_off_time
-            print (f'concat_duration:{concat_vid_duration}\t clips_length:{len(subclips)}\t')
+            print (f'concat_vid_duration:{concat_vid_duration}\t clips_length:{len(subclips)}\t')
 
 # Concatenate clips
 final_video = concatenate_videoclips(subclips).set_fps(60)
 
+clip.close()
+sub.close()
 now = datetime.datetime.now()
 final_video.audio = CompositeAudioClip([input_audio])
 final_video.write_videofile(f'./{now}.MP4',)
