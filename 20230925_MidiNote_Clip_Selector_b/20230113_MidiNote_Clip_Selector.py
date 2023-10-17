@@ -14,11 +14,21 @@ input_audio = AudioFileClip(input_audio_path)
 
 midi_file_path = easygui.fileopenbox('../', filetypes=['*.mid'], multiple=False, title='Select Midi File')
 csv_string = py_midicsv.midi_to_csv(midi_file_path)
+csv_buffer
 
 with open('auto_saved.csv', 'w', encoding='UTF8') as f:
     csv_with_no_header = csv_string[5:]
     f.writelines(csv_with_no_header)
     
+# %%
+import pandas as pd
+
+
+df = pd.read_csv('\n'.join(csv_string), header=None)
+
+
+
+
 
 # %%
 def select_clip_with_notes(note: int, dir: str) -> str:
