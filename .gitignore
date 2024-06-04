@@ -159,7 +159,9 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 INPUT_VIDEOS/
-20230925_MidiNote_Clip_Selector_b copy/Bus_Stop_0013/Bus_Stop_0013/auto-backups/Bus_Stop_0013/Bus_Stop_0013 [2023-09-26 013835].bwproject
+INPUT_IMAGE/
+INPUT_AUDIO/
 *.mp3
 *.MP4
+*.mp4
 *.bwproject
