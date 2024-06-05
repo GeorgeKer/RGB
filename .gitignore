@@ -176,4 +176,6 @@ INPUT_AUDIO/
 *.FLAC
 *.mp3
 *.MP3
+*.ogg
+*.ogg
 *.bwproject
