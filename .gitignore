@@ -164,4 +164,16 @@ INPUT_AUDIO/
 *.mp3
 *.MP4
 *.mp4
+*.jpg
+*.png
+*.jpeg
+*.JPG
+*.PNG
+*.JPEG
+*.wav
+*.WAV
+*.flac
+*.FLAC
+*.mp3
+*.MP3
 *.bwproject
